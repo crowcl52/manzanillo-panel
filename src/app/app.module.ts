@@ -25,6 +25,11 @@ import { ClientDataComponent } from './selector/clients/clients-detail/client-da
 import { ClientUsersComponent } from './selector/clients/clients-detail/client-users/client-users.component';
 import { ClientCotizacionesComponent } from './selector/clients/clients-detail/client-cotizaciones/client-cotizaciones.component';
 import { ClientServiciosComponent } from './selector/clients/clients-detail/client-servicios/client-servicios.component';
+import { ClientUserDetailComponent } from './selector/clients/clients-detail/client-users/client-user-detail/client-user-detail.component';
+import { CotizacionesComponent } from './selector/cotizaciones/cotizaciones.component';
+import { AgentesComponent } from './selector/agentes/agentes.component';
+import { PatioComponent } from './selector/patio/patio.component';
+import { DashbordsComponent } from './selector/dashbords/dashbords.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +46,12 @@ import { ClientServiciosComponent } from './selector/clients/clients-detail/clie
     ClientDataComponent,
     ClientUsersComponent,
     ClientCotizacionesComponent,
-    ClientServiciosComponent
+    ClientServiciosComponent,
+    ClientUserDetailComponent,
+    CotizacionesComponent,
+    AgentesComponent,
+    PatioComponent,
+    DashbordsComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +73,8 @@ import { ClientServiciosComponent } from './selector/clients/clients-detail/clie
   bootstrap: [AppComponent],
   entryComponents:[
     RegisterModalComponent,
-    AdministraitorsDetailComponent
+    AdministraitorsDetailComponent,
+    ClientUserDetailComponent
   ]
 })
 export class AppModule { }

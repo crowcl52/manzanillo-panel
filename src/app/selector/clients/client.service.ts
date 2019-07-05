@@ -27,7 +27,6 @@ export class ClientService {
     return this.http.get(url, { headers: Header });
   }
 
-  //  dministrators/users/search?q=user number 2
   searchClientUsers(value) {
     let url = `${this.apiUrl}${this.clientApi}/users/search?q=${value}`;
     const Header = new HttpHeaders({
@@ -35,5 +34,56 @@ export class ClientService {
     });
     return this.http.get(url, { headers: Header });
   }
+  // Empresa clientes
+  getClientBusiness(id) {
+    let url = `${this.apiUrl}${this.clientApi}/${id}/users`;
+    const Header = new HttpHeaders({
+      'Authorization': 'Bearer ' + this.token
+    });
+    return this.http.get(url, { headers: Header });
+  }
+
+  searchClientBusiness(value, id) {
+    let url = `${this.apiUrl}${this.clientApi}/${id}/users/search?q=${value}`;
+    const Header = new HttpHeaders({
+      'Authorization': 'Bearer ' + this.token
+    });
+    return this.http.get(url, { headers: Header });
+  }
+
+  // Cliente cotizacion
+  getClientQuotations(id) {
+    let url = `${this.apiUrl}${this.clientApi}/${id}/quotations`;
+    const Header = new HttpHeaders({
+      'Authorization': 'Bearer ' + this.token
+    });
+    return this.http.get(url, { headers: Header });
+  }
+
+  searchClientQuotations(value, id) {
+    let url = `${this.apiUrl}${this.clientApi}/${id}/quotations/search?q=${value}`;
+    const Header = new HttpHeaders({
+      'Authorization': 'Bearer ' + this.token
+    });
+    return this.http.get(url, { headers: Header });
+  }
+
+  // Cliente Servicios {{SERVER}}/api/v1/clients/1/services
+  getClientServices(id) {
+    let url = `${this.apiUrl}${this.clientApi}/${id}/services`;
+    const Header = new HttpHeaders({
+      'Authorization': 'Bearer ' + this.token
+    });
+    return this.http.get(url, { headers: Header });
+  }
+
+  searchClientServices(value, id) {
+    let url = `${this.apiUrl}${this.clientApi}/${id}/services/search?q=${value}`;
+    const Header = new HttpHeaders({
+      'Authorization': 'Bearer ' + this.token
+    });
+    return this.http.get(url, { headers: Header });
+  }
+
 
 }

@@ -1,3 +1,33 @@
-<p>
-  client-users works!
-</p>
+<section class="container-fluid p-0 full2">
+    <div class="row m-0 p-0 mt-4">
+      <mat-form-field class="offset-6 col-5" appearance="outline">
+        <mat-label>Buscar</mat-label>
+        <input #searchInput (change)="search(searchInput.value)" matInput>
+        <mat-icon matSuffix>search</mat-icon>
+        <mat-hint align="end">presiona enter para buscar</mat-hint>
+      </mat-form-field>
+  </div>
+  <div class="row m-0 mt-5">
+    <table class="table table-hover col-12">
+      <thead>
+        <tr>
+          <th scope="col">Foto</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Email</th>
+          <th scope="col">Tipo de cuenta</th>
+          <th scope="col">Accion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="cursor" (click)="clientDetail(item.id)" *ngFor="let item of clients" >
+          <th scope="row"> <img [src]="item.photo_profile?.url" alt=" photo"> </th>
+          <td>{{item.fullName}}</td>
+          <td>{{item.email}}</td>
+          <td> {{item.role.name}} </td>
+          <td (click)="$event.stopPropagation(); delete(item)" > <span class="badge badge-danger">Eliminar</span> </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</section>

@@ -1,33 +1,35 @@
-<div class="row">
-  <div class="col-5">
-    <input id="fileInpt" accept="image/*" (change)="getFile($event)" class="d-none" type="file">
-    <div class="img-container">
-      <button mat-fab class="edit-btn" (click)="clickFile('fileInpt')">
-        <mat-icon>edit</mat-icon>
-      </button>
-      <img width="100%" id="imgTag" src="https://via.placeholder.com/300.png/09f/fff" alt="profile-img">
+<section class="full2 mt-5">
+  <div class="row m-0 p-0">
+    <div class="col-5">
+      <input id="fileInpt" accept="image/*" (change)="getFile($event)" class="d-none" type="file">
+      <div class="img-container">
+        <button mat-fab class="edit-btn" (click)="clickFile('fileInpt')">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <img width="100%" id="imgTag" src="https://via.placeholder.com/300.png/09f/fff" alt="profile-img">
+      </div>
+    </div>
+    <!-- form -->
+    <div class="col-6 row" [formGroup]="firstFormGroup">
+      <mat-form-field class="col-12">
+        <input matInput placeholder="Nombre" formControlName="nameCtrl" required>
+      </mat-form-field>
+      <mat-form-field class="col-12">
+        <input matInput type="email" placeholder="Email" formControlName="emailCtrl" required>
+      </mat-form-field>
+      <p class="col-12"> <b>Tipo de Cuenta</b> </p>
+      <div class="col-12">
+        <mat-radio-group aria-label="Select an option" formControlName="role">
+          <mat-radio-button value="1">Adminsitrador</mat-radio-button> <br>
+          <mat-radio-button value="2">Auxiliar</mat-radio-button>
+        </mat-radio-group>
+      </div>
     </div>
   </div>
-  <!-- form -->
-  <div class="col-6 row" [formGroup]="firstFormGroup">
-    <mat-form-field class="col-12">
-      <input matInput placeholder="Nombre" formControlName="nameCtrl" required>
-    </mat-form-field>
-    <mat-form-field class="col-12">
-      <input matInput type="email" placeholder="Email" formControlName="emailCtrl" required>
-    </mat-form-field>
-    <p class="col-12"> <b>Tipo de Cuenta</b> </p>
-    <div class="col-12">
-      <mat-radio-group aria-label="Select an option" formControlName="role">
-        <mat-radio-button value="1">Adminsitrador</mat-radio-button> <br>
-        <mat-radio-button value="2">Auxiliar</mat-radio-button>
-      </mat-radio-group>
-    </div>
-  </div>
-</div>
-<!-- buttons -->
-<section class="row custom-btn">
-  <button type="button" class="mr-3 col-auto btn btn-success">Guardar</button>
-  <button type="button" class="mr-3 col-auto btn btn-danger">Eliminar</button>
-  <button type="button" class="mr-3 col-auto btn btn-secondary">Cancelar</button>
+  <!-- buttons -->
+  <section class="row custom-btn">
+    <button type="button" class="mr-3 col-auto btn btn-success">Guardar</button>
+    <button type="button" class="mr-3 col-auto btn btn-danger">Eliminar</button>
+    <button type="button" class="mr-3 col-auto btn btn-secondary">Cancelar</button>
+  </section>
 </section>
