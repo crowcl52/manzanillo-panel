@@ -1,0 +1,48 @@
+<mat-toolbar [color]='"primary"'>
+  <button mat-icon-button (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="example-spacer"></span>
+  <mat-icon class="example-icon mr-4" aria-hidden="false" aria-label="Example heart icon">notifications</mat-icon>
+  <div class="example-icon row align-items-center">
+    <div class="avatar"></div>
+    <p class="m-0 col"> Martin Eduardo Sanchez Rubio </p>
+  </div>
+  <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">settings</mat-icon>
+</mat-toolbar>
+<mat-drawer-container class="example-container full" [hasBackdrop]="'false'">
+  <mat-drawer #drawer class="bg-nav" style="width: 200px;" [mode]="'side'">
+    <div class="row m-0">
+      <div class="col-12 py-4 px-0 text-center">
+        <a [routerLink]="['/administradores']" class="text-white center-all"  > <mat-icon class="mx-2" >assignment_ind</mat-icon>  Administradores </a>
+      </div>
+      <div class="col-12 py-4 px-0 text-center">
+        <a class="text-white center-all" [routerLink]="['/clientes']"> <mat-icon class="mx-2" >supervised_user_circle</mat-icon>  Clientes </a>
+      </div>
+      <div class="col-12 py-4 px-0 text-center">
+        <a class="text-white center-all" [routerLink]="['/administradores']"> <mat-icon class="mx-2" >room_service</mat-icon>  Servicios </a>
+      </div>
+      <div class="col-12 py-4 px-0 text-center">
+        <a class="text-white center-all" [routerLink]="['/administradores']"> <mat-icon class="mx-2" >book</mat-icon>  Cotizaciones </a>
+      </div>
+      <div class="col-12 py-4 px-0 text-center">
+        <a class="text-white center-all" [routerLink]="['/administradores']"> <mat-icon class="mx-2" >group</mat-icon>  Agentes aduanales </a>
+      </div>
+      <div class="col-12 py-4 px-0 text-center">
+        <a class="text-white center-all" [routerLink]="['/administradores']"> <mat-icon class="mx-2" >public</mat-icon>  Patio de maniobras </a>
+      </div>
+      <div class="col-12 py-4 px-0 text-center">
+        <a class="text-white center-all" [routerLink]="['/administradores']"> <mat-icon class="mx-2" >insert_chart</mat-icon>  Estadisticas </a>
+      </div>
+      <div class="col-12 py-4 px-0 text-center">
+        <a class="text-white center-all" [routerLink]="['/administradores']"> <mat-icon class="mx-2" >exit_to_app</mat-icon>  Cerrar sesión </a>
+      </div>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <!-- content -->
+    <section style="min-height: 720px; overflow: hidden;" >
+      <router-outlet></router-outlet>
+    </section>
+  </mat-drawer-content>
+</mat-drawer-container>

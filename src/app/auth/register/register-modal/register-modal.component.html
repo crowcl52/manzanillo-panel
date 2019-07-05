@@ -1,0 +1,92 @@
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <!-- empresa -->
+      <ng-template matStepLabel>Datos de la empresa</ng-template>
+      <div class="row">
+        <div class="col-5">
+          <input id="fileInpt" accept="image/*" (change)="getFile($event)" class="d-none" type="file">
+          <div class="img-container">
+            <button mat-fab class="edit-btn" (click)="clickFile('fileInpt')">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <img width="100%" id="imgTag" src="https://via.placeholder.com/300.png/09f/fff" alt="profile-img">
+          </div>
+        </div>
+        <!-- form -->
+        <div class="col-6 row">
+          <mat-form-field class="col-12">
+            <input matInput placeholder="Nombre" formControlName="nameCtrl" required>
+          </mat-form-field>
+          <mat-form-field class="col-12">
+            <input matInput type="email" placeholder="Email" formControlName="emailCtrl" required>
+          </mat-form-field>
+          <mat-form-field class="col-12">
+            <input matInput type="tel" placeholder="Telefono" formControlName="telCtrl" required>
+          </mat-form-field>
+          <mat-form-field class="col-12">
+            <input matInput placeholder="Web" formControlName="webCtrl" required>
+          </mat-form-field>
+          <p class="col-12"> <b>Domicilio</b> </p>
+          <mat-form-field class="col-4">
+            <input matInput placeholder="Ciudad" formControlName="ciudadCtrl" required>
+          </mat-form-field>
+          <mat-form-field class="col-4">
+            <input matInput placeholder="Estado" formControlName="estadoCtrl" required>
+          </mat-form-field>
+          <mat-form-field class="col-4">
+            <input matInput placeholder="Pais" formControlName="paisCtrl" required>
+          </mat-form-field>
+        </div>
+      </div>
+      <div>
+        <button mat-raised-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <!-- usuario administrador -->
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Usuario Adminsitrador</ng-template>
+      <div class="row">
+          <div class="col-5">
+            <input id="fileInpt2" accept="image/*" (change)="getFile2($event)" class="d-none" type="file">
+            <div class="img-container">
+              <button mat-fab class="edit-btn" (click)="clickFile('fileInpt2')">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <img width="100%" id="imgTag2" src="https://via.placeholder.com/300.png/09f/fff" alt="profile-img">
+            </div>
+          </div>
+          <!-- form -->
+          <div class="col-6 row">
+            <mat-form-field class="col-12">
+              <input matInput placeholder="Nombre" formControlName="nameCtrl" required>
+            </mat-form-field>
+            <mat-form-field class="col-12">
+              <input matInput type="email" placeholder="Email" formControlName="emailCtrl" required>
+            </mat-form-field>
+            <mat-form-field class="col-12">
+                <input matInput type="password" placeholder="Password" formControlName="passCtrl" required>
+              </mat-form-field>
+            <mat-form-field class="col-12">
+              <input matInput type="tel" placeholder="Telefono" formControlName="telCtrl" required>
+            </mat-form-field>
+          </div>
+        </div>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+      <h3> Listo has terminado, puedes verificar tu información o enviarla </h3>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+      <button mat-button (click)="sendInfo()" > Enviar </button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

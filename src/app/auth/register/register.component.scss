@@ -1,0 +1,17 @@
+section{
+    background-image: url('../../../assets/login.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-menu{
+    display: flex;
+    flex-flow: column;
+    width: 70%;
+    height: auto;
+    padding: 20px;
+    justify-content: center;
+    align-items: center
+}

@@ -1,0 +1,43 @@
+<section class="container-fluid">
+  <div class="row m-4">
+    <h4 class="col-10">Administradores</h4>
+    <div class="col-2">
+      <button mat-icon-button class="bg-primary" (click)="openModal(null)" >
+        <mat-icon class="text-white">add</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="container-fluid m-4">
+    <div class="row m0">
+      <mat-form-field class="offset-6 col-5" appearance="outline">
+        <mat-label>Buscar</mat-label>
+        <input #searchInput (change)="search(searchInput.value)" matInput>
+        <mat-icon matSuffix>search</mat-icon>
+        <mat-hint align="end">presiona enter para buscar</mat-hint>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row m-0 mt-5">
+    <table class="table table-hover col-12">
+      <thead>
+        <tr>
+          <th scope="col">Foto</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Email</th>
+          <th scope="col">Tipo de Cuenta</th>
+          <th scope="col">Accion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="cursor" (click)="openModal(item)" *ngFor="let item of administradores" >
+          <th scope="row"> <img [src]="apiUrl+item.photo_profile.url" alt=""> </th>
+          <td>{{item.fullName}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.user_type.name}}</td>
+          <td (click)="$event.stopPropagation(); delete(item)" > <span class="badge badge-danger">Eliminar</span> </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</section>
