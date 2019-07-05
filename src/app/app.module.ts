@@ -31,6 +31,7 @@ import { AgentesComponent } from './selector/agentes/agentes.component';
 import { PatioComponent } from './selector/patio/patio.component';
 import { DashbordsComponent } from './selector/dashbords/dashbords.component';
 import { ServiciosComponent } from './selector/servicios/servicios.component';
+import { CotizacionesDetailComponent } from './selector/cotizaciones/cotizaciones-detail/cotizaciones-detail.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { ServiciosComponent } from './selector/servicios/servicios.component';
     AgentesComponent,
     PatioComponent,
     DashbordsComponent,
-    ServiciosComponent
+    ServiciosComponent,
+    CotizacionesDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +78,8 @@ import { ServiciosComponent } from './selector/servicios/servicios.component';
   entryComponents:[
     RegisterModalComponent,
     AdministraitorsDetailComponent,
-    ClientUserDetailComponent
+    ClientUserDetailComponent,
+    CotizacionesDetailComponent
   ]
 })
 export class AppModule { }

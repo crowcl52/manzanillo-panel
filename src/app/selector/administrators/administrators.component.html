@@ -30,7 +30,7 @@
       </thead>
       <tbody>
         <tr class="cursor" (click)="openModal(item)" *ngFor="let item of administradores" >
-          <th scope="row"> <img [src]="apiUrl+item.photo_profile.url" alt=""> </th>
+          <th scope="row"> <img [src]="apiUrl+item.photo_profile?.url" alt=""> </th>
           <td>{{item.fullName}}</td>
           <td>{{item.email}}</td>
           <td>{{item.user_type.name}}</td>

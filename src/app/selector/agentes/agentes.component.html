@@ -1,3 +1,38 @@
-<p>
-  agentes works!
-</p>
+<section class="container-fluid">
+  <div class="row m-4">
+    <h4 class="col-10">Agencia Aduanal</h4>
+  </div>
+  <div class="container-fluid m-4">
+    <div class="row m0">
+      <mat-form-field class="offset-6 col-5" appearance="outline">
+        <mat-label>Buscar</mat-label>
+        <input #searchInput (change)="search(searchInput.value)" matInput>
+        <mat-icon matSuffix>search</mat-icon>
+        <mat-hint align="end">presiona enter para buscar</mat-hint>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row m-0 mt-5">
+    <table class="table table-hover col-12">
+      <thead>
+        <tr>
+          <th scope="col">Foto</th>
+          <th scope="col">Empresa</th>
+          <th scope="col">Email</th>
+          <th scope="col">Direccion</th>
+          <th scope="col">Accion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="cursor" (click)="serviceDetail(item.id)" *ngFor="let item of agentes" >
+          <th scope="row"> <img [src]="apiUrl+item.photo_profile?.url" alt="photo"> </th>
+          <td>{{item.name}}</td>
+          <td>{{item.email}}</td>
+          <td> {{item.city}} - {{item.country}} </td>
+          <td (click)="$event.stopPropagation(); delete(item)" > <span class="badge badge-danger">Eliminar</span> </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</section>
