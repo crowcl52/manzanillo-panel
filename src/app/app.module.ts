@@ -30,6 +30,7 @@ import { CotizacionesComponent } from './selector/cotizaciones/cotizaciones.comp
 import { AgentesComponent } from './selector/agentes/agentes.component';
 import { PatioComponent } from './selector/patio/patio.component';
 import { DashbordsComponent } from './selector/dashbords/dashbords.component';
+import { ServiciosComponent } from './selector/servicios/servicios.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { DashbordsComponent } from './selector/dashbords/dashbords.component';
     AgentesComponent,
     PatioComponent,
     DashbordsComponent,
+    ServiciosComponent
   ],
   imports: [
     BrowserModule,
