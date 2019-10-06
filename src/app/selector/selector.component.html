@@ -3,12 +3,12 @@
     <mat-icon>menu</mat-icon>
   </button>
   <span class="example-spacer"></span>
-  <mat-icon class="example-icon mr-4" aria-hidden="false" aria-label="Example heart icon">notifications</mat-icon>
+  <!-- <mat-icon class="example-icon mr-4" aria-hidden="false" aria-label="Example heart icon">notifications</mat-icon> -->
   <div class="example-icon row align-items-center">
     <div class="avatar"></div>
     <p class="m-0 col"> Martin Eduardo Sanchez Rubio </p>
   </div>
-  <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">settings</mat-icon>
+  <!-- <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">settings</mat-icon> -->
 </mat-toolbar>
 <mat-drawer-container class="example-container full" [hasBackdrop]="'false'">
   <mat-drawer #drawer class="bg-nav" style="width: 200px;" [mode]="'side'">
@@ -28,20 +28,20 @@
       <div class="col-12 py-4 px-0 text-center">
         <a class="text-white center-all" [routerLink]="['/agentes-aduanales']"> <mat-icon class="mx-2" >group</mat-icon>  Agentes aduanales </a>
       </div>
-      <div class="col-12 py-4 px-0 text-center">
+      <!-- <div class="col-12 py-4 px-0 text-center">
         <a class="text-white center-all" [routerLink]="['/patio-maniobras']"> <mat-icon class="mx-2" >public</mat-icon>  Patio de maniobras </a>
-      </div>
+      </div> -->
       <div class="col-12 py-4 px-0 text-center">
         <a class="text-white center-all" [routerLink]="['/estadisticas']"> <mat-icon class="mx-2" >insert_chart</mat-icon>  Estadisticas </a>
       </div>
       <div class="col-12 py-4 px-0 text-center">
-        <a class="text-white center-all"> <mat-icon class="mx-2" >exit_to_app</mat-icon>  Cerrar sesión </a>
+        <a class="text-white center-all" (click)="logout()" > <mat-icon class="mx-2" >exit_to_app</mat-icon> Cerrar sesión </a>
       </div>
     </div>
   </mat-drawer>
   <mat-drawer-content>
     <!-- content -->
-    <section style="min-height: 720px; overflow: hidden;" >
+    <section style="min-height: 100vh; overflow: hidden;" >
       <router-outlet></router-outlet>
     </section>
   </mat-drawer-content>

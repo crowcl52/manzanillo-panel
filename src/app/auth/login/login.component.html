@@ -14,10 +14,14 @@
       <button mat-icon-button matSuffix (click)="hide = !hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
+      <mat-hint>Recuperar password</mat-hint>
     </mat-form-field>
     <div class="row justify-content-center full-width">
       <div class="col-5">
           <button (click)="login()" mat-stroked-button class="full-width" mat-button>INICIAR</button>
+      </div>
+      <div class="col-12 text-center">
+        <small> <a [routerLink]="[ '/register']">Ir a registro</a> </small>
       </div>
     </div>
   </div>
