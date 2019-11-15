@@ -11,10 +11,16 @@
   <!-- form -->
   <div class="col-6 row" [formGroup]="firstFormGroup">
     <mat-form-field class="col-12">
-      <input matInput placeholder="Nombre" formControlName="nameCtrl" required>
+      <input matInput placeholder="Nombre" formControlName="fullName" required>
+    </mat-form-field>
+    <mat-form-field  *ngIf="!isEdit" class="col-12">
+      <input matInput type="email" placeholder="Email" formControlName="email" required>
     </mat-form-field>
     <mat-form-field class="col-12">
-      <input matInput type="email" placeholder="Email" formControlName="emailCtrl" required>
+      <input matInput type="password" placeholder="Password" formControlName="password" required>
+    </mat-form-field>
+    <mat-form-field class="col-12">
+      <input matInput placeholder="Phone" formControlName="phone">
     </mat-form-field>
     <p class="col-12"> <b>Tipo de Cuenta</b> </p>
     <div class="col-12">
@@ -28,7 +34,7 @@
 <!-- buttons -->
 
 <mat-dialog-actions align="end">
-  <button type="button" class="mr-3 btn btn-success">Guardar</button>
-  <button type="button" class="mr-3 btn btn-danger">Eliminar</button>
-  <button type="button" class="mr-3 btn btn-secondary">Cancelar</button>
+  <button type="button" class="mr-3 btn btn-success" *ngIf="!isEdit" [disabled]="!this.firstFormGroup.valid"  (click)="saveAdmin()" >Guardar</button>
+  <button type="button" class="mr-3 btn btn-success" *ngIf="isEdit" [disabled]="!this.firstFormGroup.valid"  (click)="editAdmin()" >Guardar</button>
+  <button type="button" class="mr-3 btn btn-secondary" mat-dialog-close >Cancelar</button>
 </mat-dialog-actions>

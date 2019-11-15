@@ -19,7 +19,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="cursor" (click)="clientDetail(item.id)" *ngFor="let item of clients" >
+        <tr class="cursor" (click)="clientDetail(item)" *ngFor="let item of clients" >
           <th scope="row"> <img [src]="item.photo_profile?.url" alt=" photo"> </th>
           <td>{{item.fullName}}</td>
           <td>{{item.email}}</td>

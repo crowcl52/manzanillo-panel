@@ -1,4 +1,4 @@
-<section class="full2 mt-5">
+<section class="mt-5">
   <div class="row m-0 p-0">
     <div class="col-5">
       <input id="fileInpt" accept="image/*" (change)="getFile($event)" class="d-none" type="file">
@@ -11,25 +11,51 @@
     </div>
     <!-- form -->
     <div class="col-6 row" [formGroup]="firstFormGroup">
-      <mat-form-field class="col-12">
-        <input matInput placeholder="Nombre" formControlName="nameCtrl" required>
+      <mat-form-field class="col-6">
+        <input matInput placeholder="Nombre" formControlName="name">
       </mat-form-field>
-      <mat-form-field class="col-12">
-        <input matInput type="email" placeholder="Email" formControlName="emailCtrl" required>
+      <mat-form-field class="col-6">
+        <input matInput type="email" placeholder="Email" formControlName="email">
       </mat-form-field>
-      <p class="col-12"> <b>Tipo de Cuenta</b> </p>
-      <div class="col-12">
+      <mat-form-field class="col-6">
+        <input matInput placeholder="website" formControlName="website">
+      </mat-form-field>
+      <mat-form-field class="col-6">
+        <input matInput placeholder="phone" formControlName="phone">
+      </mat-form-field>
+      <mat-form-field class="col-6">
+        <input matInput placeholder="bank_name" formControlName="bank_name">
+      </mat-form-field>
+      <mat-form-field class="col-6">
+        <input matInput placeholder="bank_account" formControlName="bank_account">
+      </mat-form-field>
+      <mat-form-field class="col-6">
+        <input matInput placeholder="bank_key" formControlName="bank_key">
+      </mat-form-field>
+      <mat-form-field class="col-6">
+        <input matInput placeholder="business_name" formControlName="business_name">
+      </mat-form-field>
+      <mat-form-field class="col-4">
+        <input matInput placeholder="country" formControlName="country">
+      </mat-form-field>
+      <mat-form-field class="col-4">
+        <input matInput placeholder="state" formControlName="state">
+      </mat-form-field>
+      <mat-form-field class="col-4">
+        <input matInput placeholder="city" formControlName="city">
+      </mat-form-field>
+
+      <!-- <p class="col-12"> <b>Tipo de Cuenta</b> </p> -->
+      <!-- <div class="col-12">
         <mat-radio-group aria-label="Select an option" formControlName="role">
           <mat-radio-button value="1">Adminsitrador</mat-radio-button> <br>
           <mat-radio-button value="2">Auxiliar</mat-radio-button>
         </mat-radio-group>
-      </div>
+      </div> -->
     </div>
   </div>
   <!-- buttons -->
-  <section class="row custom-btn">
-    <button type="button" class="mr-3 col-auto btn btn-success">Guardar</button>
-    <button type="button" class="mr-3 col-auto btn btn-danger">Eliminar</button>
-    <button type="button" class="mr-3 col-auto btn btn-secondary">Cancelar</button>
+  <section class="row m-0 justify-content-end">
+    <button type="button" class="mr-3 col-auto btn btn-success" (click)="editClient()" >Guardar</button>
   </section>
 </section>

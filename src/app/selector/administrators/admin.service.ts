@@ -14,26 +14,42 @@ export class AdminService {
   token = '';
 
 
-  constructor( private http: HttpClient, private store: Store<AppState> ) {
-    store.select('user').subscribe(user =>{
+  constructor(private http: HttpClient, private store: Store<AppState>) {
+    store.select('user').subscribe(user => {
       this.token = user.data.token;
     });
-   }
+  }
 
-   getAdminUSers(){
-    let url = this.apiUrl+this.adminUrl;
+  getAdminUSers() {
+    let url = this.apiUrl + this.adminUrl;
     const Header = new HttpHeaders({
-      'Authorization' : 'Bearer ' + this.token
+      'Authorization': 'Bearer ' + this.token
     });
     return this.http.get(url, { headers: Header });
-   }
+  }
   //  dministrators/users/search?q=user number 2
-   searchAdminUSers(value){
+  searchAdminUSers(value) {
     let url = `${this.apiUrl}${this.adminUrl}/users/search?q=${value}`;
     const Header = new HttpHeaders({
-      'Authorization' : 'Bearer ' + this.token
+      'Authorization': 'Bearer ' + this.token
     });
     return this.http.get(url, { headers: Header });
-   }
+  }
+
+  saveAdmin(admin) {
+    let url = `${this.apiUrl}core/users/auth/local/signup/admin`;
+    const Header = new HttpHeaders({
+      'Authorization': 'Bearer ' + this.token
+    });
+    return this.http.post(url, admin,{ headers: Header });
+  }
+
+  editAdmin(admin,id) {
+    let url = `${this.apiUrl}core/users/${id}`;
+    const Header = new HttpHeaders({
+      'Authorization': 'Bearer ' + this.token
+    });
+    return this.http.patch(url, admin,{ headers: Header });
+  }
 
 }

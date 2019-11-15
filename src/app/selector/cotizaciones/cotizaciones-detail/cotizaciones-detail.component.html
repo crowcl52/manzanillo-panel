@@ -1,4 +1,4 @@
-<section class="container-fluid">
+<section mat-dialog-content class="container-fluid">
   <mat-accordion>
     <mat-expansion-panel>
       <mat-expansion-panel-header>
@@ -70,8 +70,47 @@
     </mat-expansion-panel>
   </mat-accordion>
   <p class="mt-4"> <b>Tipo de Cuenta</b> </p>
-  <mat-radio-group class="mt-2" aria-label="Tipo de cotizacion">
+  <mat-radio-group class="mt-2" aria-label="Tipo de cotizacion" [(ngModel)]="formType">
     <mat-radio-button value="A1">A1</mat-radio-button> <br>
     <mat-radio-button value="A4">A4</mat-radio-button>
   </mat-radio-group>
 </section>
+
+<mat-accordion class="mt-3">
+  <mat-expansion-panel *ngIf="formType == 'A1'">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        A1
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <!-- Info -->
+    <form [formGroup]="A1FormGroup">
+      <div class="row">
+        <mat-form-field *ngFor="let f of formA1builder" class="col-auto">
+          <input matInput [type]="f.type" [placeholder]="f.name" [formControlName]="f.formName">
+        </mat-form-field>
+      </div>
+    </form>
+  </mat-expansion-panel>
+  <mat-expansion-panel *ngIf="formType == 'A4'">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        A4
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <!-- Info -->
+    <form [formGroup]="A4FormGroup">
+      <div class="row">
+        <mat-form-field *ngFor="let f of formA4builder" class="col-auto">
+          <input matInput [type]="f.type" [placeholder]="f.name" [formControlName]="f.formName">
+        </mat-form-field>
+      </div>
+    </form>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<mat-dialog-actions align="end">
+  <button type="button" class="mr-3 btn btn-success" (click)="saveInfo()">Guardar</button>
+  <button type="button" class="mr-3 btn btn-danger">Eliminar</button>
+  <button type="button" class="mr-3 btn btn-secondary">Cancelar</button>
+</mat-dialog-actions>

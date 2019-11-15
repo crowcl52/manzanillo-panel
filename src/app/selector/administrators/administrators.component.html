@@ -33,8 +33,8 @@
           <th scope="row"> <img [src]="apiUrl+item.photo_profile?.url" alt=""> </th>
           <td>{{item.fullName}}</td>
           <td>{{item.email}}</td>
-          <td>{{item.user_type.name}}</td>
-          <td (click)="$event.stopPropagation(); delete(item)" > <span class="badge badge-danger">Eliminar</span> </td>
+          <td>{{item.role.name}}</td>
+          <!-- <td (click)="$event.stopPropagation(); delete(item)" > <span class="badge badge-danger">Eliminar</span> </td> -->
         </tr>
       </tbody>
     </table>

@@ -34,6 +34,15 @@ export class ClientService {
     });
     return this.http.get(url, { headers: Header });
   }
+
+  getClientData(id) {
+    let url = `${this.apiUrl}${this.clientApi}/${id}`
+    const Header = new HttpHeaders({
+      'Authorization': 'Bearer ' + this.token
+    });
+    return this.http.get(url, { headers: Header });
+  }
+
   // Empresa clientes
   getClientBusiness(id) {
     let url = `${this.apiUrl}${this.clientApi}/${id}/users`;
@@ -83,6 +92,14 @@ export class ClientService {
       'Authorization': 'Bearer ' + this.token
     });
     return this.http.get(url, { headers: Header });
+  }
+
+  editClientData(data,id){
+    let url = `${this.apiUrl}${this.clientApi}/${id}`;
+    const Header = new HttpHeaders({
+      'Authorization': 'Bearer ' + this.token
+    });
+    return this.http.patch(url, data, { headers: Header });
   }
 
 

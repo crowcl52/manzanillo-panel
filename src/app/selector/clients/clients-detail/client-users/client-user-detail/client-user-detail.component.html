@@ -11,10 +11,13 @@
   <!-- form -->
   <div class="col-6 row" [formGroup]="firstFormGroup">
     <mat-form-field class="col-12">
-      <input matInput placeholder="Nombre" formControlName="nameCtrl" required>
+      <input matInput placeholder="Nombre" formControlName="name" required>
     </mat-form-field>
     <mat-form-field class="col-12">
-      <input matInput type="email" placeholder="Email" formControlName="emailCtrl" required>
+      <input matInput type="email" placeholder="Email" formControlName="email" required>
+    </mat-form-field>
+    <mat-form-field class="col-12">
+      <input matInput placeholder="Phone" formControlName="phone" required>
     </mat-form-field>
     <p class="col-12"> <b>Tipo de Cuenta</b> </p>
     <div class="col-12">
@@ -26,7 +29,7 @@
   </div>
 </div>
 <!-- buttons -->
-<section class="row custom-btn">
-  <button type="button" class="mr-3 col-auto btn btn-success">Guardar</button>
-  <button type="button" class="mr-3 col-auto btn btn-secondary">Cancelar</button>
-</section>
+<mat-dialog-actions align="end">
+  <button type="button" class="mr-3 col-auto btn btn-success" (click)="editUser()" >Guardar</button>
+  <button type="button" class="mr-3 btn btn-secondary" mat-dialog-close >Cancelar</button>
+</mat-dialog-actions>

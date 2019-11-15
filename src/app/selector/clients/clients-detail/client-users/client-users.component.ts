@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { ClientService } from '../../client.service';
@@ -34,11 +35,11 @@ export class ClientUsersComponent implements OnInit {
     } )
   }
 
-  clientDetail(id) {
+  clientDetail(data) {
     const dialogRef = this.dialog.open(ClientUserDetailComponent, {
       width: '1000px',
       height: '600px',
-      data: { id }
+      data: { data }
     });
   }
 
